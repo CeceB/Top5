@@ -1,9 +1,12 @@
+<div class="well">
 <p id="notice"><%= notice %></p>
-
+<h1><%= @artist.name%></h1>
+<% if @artist.avatar_file_name !=nil%>
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
+  <%= image_tag @artist.avatar.url(:medium) %>
 </p>
+<%end%>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+</div>
